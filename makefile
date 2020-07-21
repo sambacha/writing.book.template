@@ -11,7 +11,8 @@ CC=pandoc
 
 # Rules
 final:
-	pandoc --top-level-division=chapter --toc -S -o release.epub $(CHAP)/title.yaml $(CHAP)/*.$(OBJS)
+# pandoc -f markdown+smart -t markdown-smart
+	pandoc --top-level-division=chapter --toc -t markdown-smart -o release.epub $(CHAP)/title.yaml $(CHAP)/*.$(OBJS)
 draft:
 clean:
 	rm release.epub;
